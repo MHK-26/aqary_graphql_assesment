@@ -6,7 +6,7 @@ class Repository extends Equatable {
   final int stars;
   final String language;
 
-  Repository({
+  const Repository({
     required this.name,
     required this.description,
     required this.stars,

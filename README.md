@@ -22,21 +22,15 @@ GitHub Repositories Viewer is a Flutter application that fetches and displays po
 
 ### Installation
 
-#### 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/github-repositories-viewer.git
-   cd github-repositories-viewer
-```
-
-#### 2. Install dependencies:
+#### 1. Install dependencies:
 
 ```bash
 flutter pub get
 ```
 
 
-#### 3. Create a .env file in the root directory and add your GitHub Personal Access Token:
+#### 2. Create a .env file in the root directory and add your GitHub Personal Access Token:
 
 ```
 GITHUB_PERSONAL_ACCESS_TOKEN=your_personal_access_token

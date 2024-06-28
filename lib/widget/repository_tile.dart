@@ -13,18 +13,20 @@ class RepositoryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(repo.name),
-      subtitle: Text(repo.description),
-      trailing: SizedBox(
-        width: 30,
-        child: Row(
-          children: [
-            Icon(
-              Icons.star,
-              size: 15,
-            ),
-            Text(repo.stars.toString()),
-          ],
-        ),
+      subtitle: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(
+            Icons.star,
+            size: 15,
+          ),
+          const SizedBox(width: 4),
+          Text(repo.stars.toString()),
+          const SizedBox(width: 8),
+        ],
+      ),
+      trailing: Chip(
+        label: Text(repo.language),
       ),
     );
   }

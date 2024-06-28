@@ -5,6 +5,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 class GraphQLConfig {
   static HttpLink httpLink = HttpLink("https://api.github.com/graphql");
 
+  //TODO ADD_YOUR_ACCESS_TOKEN IN .ENV
   static AuthLink authLink = AuthLink(
     getToken: () async =>
         'Bearer ${dotenv.env['GITHUB_PERSONAL_ACCESS_TOKEN']}',

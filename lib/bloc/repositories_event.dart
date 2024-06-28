@@ -12,7 +12,7 @@ class FetchRepositories extends RepositoriesEvent {}
 class FilterRepositoriesByLanguage extends RepositoriesEvent {
   final String language;
 
-  FilterRepositoriesByLanguage(this.language);
+  const FilterRepositoriesByLanguage(this.language);
 
   @override
   List<Object> get props => [language];

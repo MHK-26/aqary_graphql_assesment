@@ -8,8 +8,7 @@ part 'repositories_state.dart';
 
 class RepositoriesBloc extends Bloc<RepositoriesEvent, RepositoriesState> {
   final GraphQLClient client;
-  List<Repository> _allRepositories = []; // List to hold all repositories
-
+  List<Repository> _allRepositories = [];
   RepositoriesBloc(this.client) : super(RepositoriesInitial()) {
     on<FetchRepositories>(_onFetchRepositories);
     on<FilterRepositoriesByLanguage>(_onFilterRepositoriesByLanguage);

@@ -1,5 +1,4 @@
 import 'package:aqary_assesment_project/bloc/repositories_bloc.dart';
-import 'package:aqary_assesment_project/model/repository.dart';
 import 'package:aqary_assesment_project/widget/repository_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +21,7 @@ class _RepositoriesScreenState extends State<RepositoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GitHub Repositories'),
+        title: const Text('GitHub Repositories'),
       ),
       body: Column(
         children: [
@@ -56,20 +55,24 @@ class _RepositoriesScreenState extends State<RepositoriesScreen> {
             child: BlocBuilder<RepositoriesBloc, RepositoriesState>(
               builder: (context, state) {
                 if (state is RepositoriesLoading) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (state is RepositoriesLoaded) {
-                  final repositories = state.repositories;
-                  return ListView.builder(
-                    itemCount: repositories.length,
-                    itemBuilder: (context, index) {
-                      final repo = repositories[index];
-                      return RepositoryTile(repo: repo);
-                    },
-                  );
+                  if (state.repositories.isEmpty) {
+                    return const Center(child: Text('No repositories found.'));
+                  } else {
+                    final repositories = state.repositories;
+                    return ListView.builder(
+                      itemCount: repositories.length,
+                      itemBuilder: (context, index) {
+                        final repo = repositories[index];
+                        return RepositoryTile(repo: repo);
+                      },
+                    );
+                  }
                 } else if (state is RepositoriesError) {
                   return Center(child: Text('Error: ${state.message}'));
                 } else {
-                  return Center(child: Text('No repositories found.'));
+                  return const Center(child: Text('No repositories found.'));
                 }
               },
             ),

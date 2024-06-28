@@ -14,7 +14,7 @@ class RepositoriesLoading extends RepositoriesState {}
 class RepositoriesLoaded extends RepositoriesState {
   final List<Repository> repositories;
 
-  RepositoriesLoaded(this.repositories);
+  const RepositoriesLoaded(this.repositories);
 
   @override
   List<Object> get props => [repositories];
@@ -23,7 +23,7 @@ class RepositoriesLoaded extends RepositoriesState {
 class RepositoriesFiltered extends RepositoriesState {
   final List<Repository> filteredRepositories;
 
-  RepositoriesFiltered(this.filteredRepositories);
+  const RepositoriesFiltered(this.filteredRepositories);
 
   @override
   List<Object> get props => [filteredRepositories];
@@ -32,7 +32,7 @@ class RepositoriesFiltered extends RepositoriesState {
 class RepositoriesError extends RepositoriesState {
   final String message;
 
-  RepositoriesError(this.message);
+  const RepositoriesError(this.message);
 
   @override
   List<Object> get props => [message];

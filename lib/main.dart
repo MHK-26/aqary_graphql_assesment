@@ -10,6 +10,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
+  print('!!!!!!!!!!!! ADD_YOUR_ACCESS_TOKEN IN .env FILE!!!!!!!!!!!!!!!');
+
   final client = GraphQLConfig.initializeClient();
 
   runApp(
